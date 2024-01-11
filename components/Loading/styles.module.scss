@@ -1,0 +1,21 @@
+.container {
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // flex-direction: column;
+  // // background-color: rgb(184, 239, 239);
+  // gap: 1rem;
+  // min-height: 150px;
+  // position: absolute;
+  // left: 50%;
+  // top: 5%;
+  // transform: translateX(-50%);
+  .text {
+    color: rgb(11, 35, 2);
+    font-size: large;
+    min-height: 20px;
+  }
+  .bars {
+    min-height: 10px;
+  }
+}

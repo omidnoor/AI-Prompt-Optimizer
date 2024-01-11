@@ -1,0 +1,17 @@
+.container_form {
+  width: 100%;
+  form {
+    .btn {
+      background-color: #052602;
+      padding: 0.5rem 1rem;
+      border: none;
+    }
+    .input {
+      width: 100%;
+      max-width: 400px;
+    }
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

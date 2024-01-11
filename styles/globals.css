@@ -1,0 +1,16 @@
+/* .sidebar-item {
+} */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sidebar-item.active {
+  /* Styles for active sidebar item */
+  background-color: #f5f7f7; /* Example style */
+  color: white;
+  border-radius: 6px;
+}

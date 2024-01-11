@@ -1,0 +1,64 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(16, 1, 19);
+  color: azure;
+  gap: 1rem;
+  .form {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 500px;
+
+    .button {
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 5, 5);
+      padding: 0.5rem 0.5rem;
+      width: 120px;
+      /* width: 500px; */
+    }
+
+    .input {
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 5, 5);
+      width: 100%;
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
+.messagesBox {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 5, 5);
+  padding: 0.5rem 1rem;
+  min-height: 300px;
+  max-width: 90%;
+  width: 500px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgb(255, 255, 255);
+  padding: 0;
+
+  .messageTemplate {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(221, 223, 240);
+    // padding: 0.5rem 0;
+    .role {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 0.5rem;
+    }
+    .content {
+      padding-left: 2rem;
+    }
+  }
+}
