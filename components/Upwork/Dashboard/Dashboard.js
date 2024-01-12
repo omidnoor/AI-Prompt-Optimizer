@@ -9,8 +9,8 @@ import Home from "./Home";
 import Analysis from "./Analysis";
 import PromptOptimizer from "components/PromptOptimizer";
 
-const Dashboard = ({ handleMessageSubmit }) => {
-  const [activeComponent, setActiveComponent] = useState("dashboard");
+const Dashboard = ({}) => {
+  const [activeComponent, setActiveComponent] = useState("prompt-optimizer");
 
   const cag = useRef(null);
 
@@ -27,21 +27,18 @@ const Dashboard = ({ handleMessageSubmit }) => {
   ];
 
   const DashboardContent = useCallback(() => <Home />);
-  const JobAnalysisContent = useCallback(
-    () => <Analysis handleMessageSubmit={handleMessageSubmit} />,
-    [handleMessageSubmit]
-  );
-  const PromptOptimizerContent = useCallback(
-    () => <PromptOptimizer handleMessageSubmit={handleMessageSubmit} />,
-    [handleMessageSubmit]
-  );
+  // const JobAnalysisContent = useCallback(
+  //   () => <Analysis handleMessageSubmit={handleMessageSubmit} />,
+  //   [handleMessageSubmit]
+  // );
+  const PromptOptimizerContent = useCallback(() => <PromptOptimizer />, []);
 
   const renderContent = () => {
     switch (activeComponent) {
       case "dashboard":
         return <DashboardContent />;
-      case "jobAnalysis":
-        return <JobAnalysisContent />;
+      // case "jobAnalysis":
+      // return <JobAnalysisContent />;
       case "prompt-optimizer":
         return <PromptOptimizerContent />;
       default:
@@ -75,7 +72,7 @@ const Dashboard = ({ handleMessageSubmit }) => {
             <ul className="list-none p-3 m-0">
               <li>
                 <ul className="list-none p-0 m-0 overflow-hidden">
-                  <li
+                  {/* <li
                     onClick={() => setActiveComponent("dashboard")}
                     className={getMenuItemClass("dashboard")}
                   >
@@ -84,8 +81,8 @@ const Dashboard = ({ handleMessageSubmit }) => {
                       <span className="font-medium">Dashboard</span>
                       <Ripple />
                     </a>
-                  </li>
-                  <li
+                  </li> */}
+                  {/* <li
                     onClick={() => setActiveComponent("jobAnalysis")}
                     className={getMenuItemClass("jobAnalysis")}
                   >
@@ -94,7 +91,7 @@ const Dashboard = ({ handleMessageSubmit }) => {
                       <span className="font-medium">Job Analysis</span>
                       <Ripple />
                     </a>
-                  </li>
+                  </li> */}
                   <li
                     onClick={() => setActiveComponent("prompt-optimizer")}
                     className={getMenuItemClass("prompt-optimizer")}
@@ -105,7 +102,7 @@ const Dashboard = ({ handleMessageSubmit }) => {
                       <Ripple />
                     </a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a className="p-ripple flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors w-full">
                       <i className="pi pi-fw pi-envelope mr-2"></i>
                       <span className="font-medium">
@@ -113,8 +110,8 @@ const Dashboard = ({ handleMessageSubmit }) => {
                       </span>
                       <Ripple />
                     </a>
-                  </li>
-                  <li>
+                  </li> */}
+                  {/* <li>
                     <a className="p-ripple flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors w-full">
                       <i className="pi pi-fw pi-book mr-2"></i>
                       <span className="font-medium">Learning Resources</span>
@@ -141,7 +138,7 @@ const Dashboard = ({ handleMessageSubmit }) => {
                       <span className="font-medium">Help & Support</span>
                       <Ripple />
                     </a>
-                  </li>
+                  </li> */}
                 </ul>
               </li>
             </ul>

@@ -38,6 +38,6 @@ const Apps = () => {
     [text, thread]
   );
   // console.log(messagesList);
-  return <Dashboard handleMessageSubmit={handleMessageSubmit} />;
+  return <Dashboard />;
 };
 export default Apps;

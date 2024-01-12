@@ -3,13 +3,14 @@ import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { getSession } from "@auth0/nextjs-auth0";
 import { BsRobot } from "react-icons/bs";
+import Dashboard from "components/Upwork/Dashboard/Dashboard";
 
 export default function Home() {
   const { isLoading, error, user } = useUser();
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>MemoAI - Login or Signup</title>
       </Head>
       <div className="flex min-h-screen w-full items-center justify-center gap-2 bg-gray-800 text-center text-white">
@@ -32,7 +33,8 @@ export default function Home() {
             )}
           </div>
         </div>
-      </div>
+      </div> */}
+      <Dashboard />
     </>
   );
 }
