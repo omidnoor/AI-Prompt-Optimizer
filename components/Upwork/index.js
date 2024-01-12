@@ -6,14 +6,6 @@ import Analysis from "./Dashboard/Analysis";
 const Upwork = ({ handleMessageSubmit }) => {
   const { setUrls } = useStore();
 
-  // useEffect(() => {
-  //   setUrls("");
-  // }, []);
-
-  return (
-    <>
-      <Dashboard handleMessageSubmit={handleMessageSubmit} />
-    </>
-  );
+  return <Dashboard handleMessageSubmit={handleMessageSubmit} />;
 };
 export default Upwork;

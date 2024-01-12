@@ -7,6 +7,7 @@ import { StyleClass } from "primereact/styleclass";
 import { Ripple } from "primereact/ripple";
 import Home from "./Home";
 import Analysis from "./Analysis";
+import PromptOptimizer from "components/PromptOptimizer";
 
 const Dashboard = ({ handleMessageSubmit }) => {
   const [activeComponent, setActiveComponent] = useState("dashboard");
@@ -30,6 +31,10 @@ const Dashboard = ({ handleMessageSubmit }) => {
     () => <Analysis handleMessageSubmit={handleMessageSubmit} />,
     [handleMessageSubmit]
   );
+  const PromptOptimizerContent = useCallback(
+    () => <PromptOptimizer handleMessageSubmit={handleMessageSubmit} />,
+    [handleMessageSubmit]
+  );
 
   const renderContent = () => {
     switch (activeComponent) {
@@ -37,6 +42,8 @@ const Dashboard = ({ handleMessageSubmit }) => {
         return <DashboardContent />;
       case "jobAnalysis":
         return <JobAnalysisContent />;
+      case "prompt-optimizer":
+        return <PromptOptimizerContent />;
       default:
         return <DashboardContent />;
     }
@@ -85,6 +92,16 @@ const Dashboard = ({ handleMessageSubmit }) => {
                     <a className="p-ripple flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors w-full">
                       <i className="pi pi-fw pi-chart-bar mr-2"></i>
                       <span className="font-medium">Job Analysis</span>
+                      <Ripple />
+                    </a>
+                  </li>
+                  <li
+                    onClick={() => setActiveComponent("prompt-optimizer")}
+                    className={getMenuItemClass("prompt-optimizer")}
+                  >
+                    <a className="p-ripple flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors w-full">
+                      <i className="pi pi-fw pi-chart-bar mr-2"></i>
+                      <span className="font-medium">Prompt Optimizer</span>
                       <Ripple />
                     </a>
                   </li>
@@ -231,60 +248,3 @@ const Dashboard = ({ handleMessageSubmit }) => {
 };
 
 export default memo(Dashboard);
-
-{
-  /* <div className="flex flex-column flex-auto">
-<div className="surface-section p-5">
-  <div className="flex align-items-start flex-column lg:flex-row lg:justify-content-between">
-    <div className="flex align-items-start flex-column md:flex-row">
-      <div>
-        <span className="text-900 font-medium text-3xl">Omid N.</span>
-        <i className="pi pi-star text-2xl ml-4 text-yellow-500"></i>
-        <div className="flex align-items-center flex-wrap text-sm">
-          <div className="mr-5 mt-3">
-            <span className="font-medium text-500">Fill Later</span>
-            <div className="text-700 mt-2">333</div>
-          </div>
-          <div className="mr-5 mt-3">
-            <span className="font-medium text-500">Fill Later</span>
-            <div className="text-700 mt-2">26</div>
-          </div>
-          <div className="mr-5 mt-3">
-            <span className="font-medium text-500">Fill Later</span>
-            <div className="text-700 mt-2">17</div>
-          </div>
-          <div className="mt-3">
-            <span className="font-medium text-500">Fill Later</span>
-            <div className="text-700 mt-2">130</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div className="p-5">
-  <div className="grid">
-    <div className="col-12 lg:col-6 xl:col-3">
-      <div className="surface-card shadow-2 p-3 border-1 border-50 border-round">
-        <div className="flex justify-content-between mb-3">
-          <div>
-            <span className="block text-500 font-medium mb-3">
-              Jobs
-            </span>
-            <div className="text-900 font-medium text-xl">2</div>
-          </div>
-          <div
-            className="flex align-items-center justify-content-center bg-blue-100 border-round"
-            style={{ width: "2.5rem", height: "2.5rem" }}
-          >
-            <i className="pi pi-shopping-cart text-blue-500 text-xl"></i>
-          </div>
-        </div>
-        <span className="text-green-500 font-medium">24 new </span>
-        <span className="text-500">since last visit</span>
-      </div>
-    </div>
-  </div>
-</div>
-</div> */
-}

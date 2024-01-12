@@ -64,6 +64,10 @@ const useStore = create((set) => ({
         messagesList: updatedMessagesList,
       };
     }),
+
+  promptsGlobal: [],
+  setPromptsGlobal: (newPrompts) =>
+    set((state) => ({ ...state, promptsGlobal: newPrompts })),
 }));
 
 export default useStore;
